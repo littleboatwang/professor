@@ -1,8 +1,8 @@
 var sub_condition = 2;
-var edu_condition = 0;
-var job_condition = 0;
-var awd_condition = 0;
-var rhs_condition = 0;
+var edu_condition = 1;
+var job_condition = 1;
+var awd_condition = 1;
+var rhs_condition = 1;
 var hss_condition = 0;
 var fmp_condition = 0;
 // var rsg_condition = 0;
@@ -115,10 +115,10 @@ function sqlsearch() {
 
 	if(epa_condition != "") // 预期津贴
 		query += " and epa >= " + epa_condition; //, [epa_condition];	
-	query += " and edu >= " + edu_condition; //, [edu_condition];	// 学历
-	query += " and job >= " + job_condition; //, [job_condition];	// 职称
-	query += " and awd >= " + awd_condition; //, [awd_condition]; 	// 奖项
-	query += " and rhs >= " + rhs_condition; //, [rhs_condition]; 	// 科研
+	query += " and edu <= " + edu_condition; //, [edu_condition];	// 学历
+	query += " and job <= " + job_condition; //, [job_condition];	// 职称
+	query += " and awd <= " + awd_condition; //, [awd_condition]; 	// 奖项
+	query += " and rhs <= " + rhs_condition; //, [rhs_condition]; 	// 科研
 
 	var groupCheckbox = $("input[name='check']");
 	var e_c_condition = 0;
